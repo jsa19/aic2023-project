@@ -54,8 +54,7 @@ elif circuit == 'BGR':
     min_temperature= -40
     max_temperature= 125
     temperature_step = 1e-1
-    temperature = 0
-    gmin_steps = 8
+    #gmin_steps = 8
     
 #-------------------------------------------------------------------#
 # PTAT Simulation
@@ -73,8 +72,6 @@ elif circuit == 'PTAT':
 elif circuit == 'TEMP_SENSOR':
     test_sim = 'TEMP_SENSOR'
     analysis_type = 'TRAN'
-    min_temperature = 0
-    max_temperature = 10
     timestep_size = 0.5e-9
     end_time = 50e-6
     run_multiple_tran = True
