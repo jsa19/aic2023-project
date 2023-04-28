@@ -25,6 +25,7 @@ print("{:20s} {:30s}".format("Design: ", design_name))
 # Circuit set up
 circuit = 'TEMP_SENSOR'
 run_multiple_tran = False
+test_all_corners = False
 min_temperature = default_min_temperature
 max_temperature = default_max_temperature
 temperature_step = default_temperature_step
@@ -72,6 +73,8 @@ elif circuit == 'PTAT':
 elif circuit == 'TEMP_SENSOR':
     test_sim = 'TEMP_SENSOR'
     analysis_type = 'TRAN'
+    min_temperature = 0
+    max_temperature = 10
     timestep_size = 0.5e-9
     end_time = 50e-6
     run_multiple_tran = True
@@ -87,7 +90,6 @@ print("{:20s} {:30s}".format(" ", analysis_type))
 tb = [analysis_type, circuit.replace('_', '-')]
 tb = "-".join(tb)
 #run_type = 'typical'
-test_all_corners = True
 sim_ext = ''
 #if run_type == 'typical':
 #    typ = 
@@ -155,7 +157,7 @@ else:
         run_single_simulation(sim_path, current_directory, run_type=run_type)
         for t in typ:
             sim_ext = '_'+view+t+'.raw'
-            data = extract_data(sim_path, tb, sim_ext, analysis_type)
+            data = extract_data(sim_path, tb_, sim_ext, analysis_type)
             plot_data(data)
             if t == 'GtAttTtVt':
         #data = extract_data(sim_path, tb_, sim_ext, analysis_type)
