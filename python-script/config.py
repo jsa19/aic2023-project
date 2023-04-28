@@ -1,0 +1,13 @@
+default_temperature = 27
+default_gmin = 1e-15
+default_reltol = 1e-6
+default_abstol = 1e-6
+default_gmin_steps = 5
+default_min_temperature = 0
+default_max_temperature = 100
+default_temperature_step = 10
+default_min_frequency = 1000
+default_max_frequency = 40000000
+default_timestep_size = 1e-9
+default_end_time = 50e-6
+default_load_capacitor = 100e-15

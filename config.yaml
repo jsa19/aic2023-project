@@ -1,0 +1,15 @@
+options:
+  template:
+    ip: tech_sky130B/cicconf/ip_template.yaml
+  project: rply
+  technology: sky130nm
+cicsim:
+  remote: git@github.com:wulffern/cicsim.git
+  revision: 0.1.1
+  on_clone: python3 -m pip install --user -e .
+cpdk:
+  remote: git@github.com:wulffern/cpdk.git
+  revision: 0.1.1
+tech_sky130B:
+  remote: git@github.com:wulffern/tech_sky130B.git
+  revision: 0.1.0
